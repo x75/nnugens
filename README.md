@@ -17,6 +17,7 @@ Requires armadillo c++ linear algebra library
     sudo apt-get install libarmadillo-dev
 
 Then 
+
     cd nnugens
     mkdir build
     cd build
