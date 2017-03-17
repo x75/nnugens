@@ -18,7 +18,7 @@ Requires armadillo c++ linear algebra library
 
 ### Mac specifics:
 Install armadillo via homebrew:
-    brew install brew install homebrew/science/armadillo
+    brew install homebrew/science/armadillo
 
 
 Then 
