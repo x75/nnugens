@@ -2,6 +2,15 @@ cmake_minimum_required (VERSION 2.8)
 set(PROJECT "NNUgens")
 project (${PROJECT})
 
+set(SC_PATH "$ENV{SC_PATH}")
+
+if(SC_PATH) 
+  message("SC_PATH set to ${SC_PATH}")
+else()
+  message(FATAL_ERROR "Please define the SC_PATH environment variable to point to SuperCollider source folder.")
+endif()
+
+
 include_directories(${SC_PATH}/include/plugin_interface)
 include_directories(${SC_PATH}/include/common)
 include_directories(${SC_PATH}/common)
@@ -14,7 +23,7 @@ endif()
 
 option(CPP11 "Build with c++11." ON)
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG OR CMAKE_C_COMPILER_ID MATCHES "Clang")
     add_definitions(-fvisibility=hidden)
 
     include (CheckCCompilerFlag)
