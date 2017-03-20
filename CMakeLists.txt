@@ -70,7 +70,7 @@ endif()
 find_package(Armadillo REQUIRED)
 include_directories(${ARMADILLO_INCLUDE_DIRS})
 
-add_library(${PROJECT} MODULE EvoPlast/EvoPlast.cpp)
+add_library(${PROJECT} MODULE source/EvoPlast.cpp)
 
 # add_executable(foo foo.cc)
 
